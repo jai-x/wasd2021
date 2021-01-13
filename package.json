@@ -1,0 +1,22 @@
+{
+  "name": "wasd2021",
+  "version": "0.1.0",
+  "description": "A nodecg broadcast graphics bundle for Warwick's Awesome Speedruns & Demos 2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jai-x/wasd2021.git"
+  },
+  "keywords": [
+    "nodecg"
+  ],
+  "author": "Jai Sharma <jai@jai.moe>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jai-x/wasd2021/issues"
+  },
+  "homepage": "https://github.com/jai-x/wasd2021#readme"
+}
