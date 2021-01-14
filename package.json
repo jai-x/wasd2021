@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/jai-x/wasd2021/issues"
   },
-  "homepage": "https://github.com/jai-x/wasd2021#readme"
+  "homepage": "https://github.com/jai-x/wasd2021#readme",
+  "nodecg": {
+    "compatibleRange": "~1.7.4"
+  }
 }
