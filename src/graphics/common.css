@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'MontserratBold';
+  src: url('./assets/montserrat-bold.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  background-color: purple;
+}

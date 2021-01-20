@@ -4,7 +4,9 @@
   "description": "A nodecg broadcast graphics bundle for Warwick's Awesome Speedruns & Demos 2021",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup --config",
+    "watch": "rollup --config --watch",
+    "nodecg": "node ../../index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,32 @@
   },
   "homepage": "https://github.com/jai-x/wasd2021#readme",
   "nodecg": {
-    "compatibleRange": "~1.7.4"
+    "compatibleRange": "~1.7.4",
+    "bundleDependencies": {
+      "nodecg-speedcontrol": "~2.2.0",
+      "nodecg-tiltify": "~0.0.0",
+      "ncg-spotify": "~1.5.0"
+    },
+    "graphics": [
+      {
+        "file": "sixteenNine/index.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      }
+    ]
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-html": "^0.2.0",
+    "@rollup/plugin-node-resolve": "^11.1.0",
+    "postcss-url": "^10.1.1",
+    "rollup": "^2.37.1",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-postcss": "^4.0.0"
+  },
+  "dependencies": {
+    "gsap": "^3.6.0",
+    "mithril": "^2.0.4"
   }
 }
