@@ -7,12 +7,7 @@ import postcssurl from 'postcss-url';
 
 const { nodecg } = require('./package.json');
 
-const gfxSrcs = nodecg.graphics.map((gfxObj) => {
-  const name = path.dirname(gfxObj.file);
-
-  const input = path.join('src', 'graphics', name, `${name}.js`);
-  const output = path.join('graphics', name, 'bundle.js');
-
+const format = (input, output, name) => {
   return {
     input: input,
     output: {
@@ -29,6 +24,15 @@ const gfxSrcs = nodecg.graphics.map((gfxObj) => {
       html({ title: name }),                       // auto-generate a html file with linked css and js bundles
     ],
   };
+};
+
+const gfxSrcs = nodecg.graphics.map((gfxObj) => {
+  const name = path.dirname(gfxObj.file);
+
+  const input = path.join('src', 'graphics', name, `${name}.js`);
+  const output = path.join('graphics', name, 'bundle.js');
+
+  return format(input, output, name);
 });
 
 export default gfxSrcs;
