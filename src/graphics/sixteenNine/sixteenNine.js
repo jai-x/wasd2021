@@ -4,9 +4,11 @@ import gsap from 'gsap';
 import '../common.css'
 import './sixteenNine.css';
 
+const camHeightRep = NodeCG.Replicant('camHeight', 'wasd2021', { defaultValue: 300 });
+
 class HelloWorldComponent {
   view() {
-    return m('div', { class: 'hello-world'}, 'Hello World!');
+    return m('.hello-world', 'Hello World!');
   }
 
   oncreate(vnode) {
@@ -24,4 +26,29 @@ class HelloWorldComponent {
   }
 }
 
-m.mount(document.body, HelloWorldComponent);
+class CamComponent {
+  view() {
+    return m('.cam');
+  }
+
+  oncreate(vnode) {
+    camHeightRep.on('change', (newVal, _) => {
+      gsap.to(vnode.dom, { height: newVal });
+    });
+  }
+}
+
+
+class SixteenNineComponent {
+  view() {
+    return [
+      m('.game'),
+      m('.left', [
+        m(CamComponent),
+      ]),
+      m('.bottom'),
+    ];
+  }
+}
+
+m.mount(document.body, SixteenNineComponent);
