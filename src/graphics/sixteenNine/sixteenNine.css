@@ -26,4 +26,55 @@
   position: absolute;
   bottom: 0px; right: 0px;
   width: 1600px; height: 180px;
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom > div {
+  font-family: 'MontserratBold';
+  color: var(--wasd-white);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 10px;
+  border-radius: 10px;
+  border: 5px solid var(--wasd-white);
+}
+
+.run-details {
+  flex-grow: 1; /* grow to available size in parent */
+}
+
+.run-game {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.run-details-row {
+  font-size: 30px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.run-details-row div {
+  margin: 0 10px;
+}
+
+.run-timing {
+  width: 500px;
+}
+
+.timer {
+  font-size: 75px;
+  font-family: 'UbuntuMono';
+}
+
+.estimate {
+  font-size: 20px;
 }
