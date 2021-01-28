@@ -23,17 +23,18 @@
 }
 
 .bottom {
+  font-family: 'DaggerSquareOblique';
+  color: var(--wasd-white);
+
   position: absolute;
   bottom: 0px; right: 0px;
   width: 1600px; height: 180px;
+
   display: flex;
   flex-direction: row;
 }
 
 .bottom > div {
-  font-family: 'MontserratBold';
-  color: var(--wasd-white);
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,8 +50,7 @@
 }
 
 .run-game {
-  font-size: 50px;
-  margin-bottom: 10px;
+  font-size: 62px;
 }
 
 .run-details-row {
@@ -70,11 +70,7 @@
   width: 500px;
 }
 
-.timer {
-  font-size: 75px;
-  font-family: 'UbuntuMono';
-}
 
 .estimate {
-  font-size: 20px;
+  font-size: 30px;
 }

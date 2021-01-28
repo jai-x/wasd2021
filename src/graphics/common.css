@@ -8,6 +8,11 @@
   src: url('./assets/ubuntumono-regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'DaggerSquareOblique';
+  src: url('./assets/daggersquare-oblique.otf') format('opentype');
+}
+
 :root {
   --wasd-blue: #3C99FF;
   --wasd-teal: #83FFCE;

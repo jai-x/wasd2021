@@ -4,6 +4,8 @@ import gsap from 'gsap';
 import '../common.css'
 import './sixteenNine.css';
 
+import TimerComponent from '../timer/timer.js';
+
 const runRep = NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol');
 const timerRep = NodeCG.Replicant('timer', 'nodecg-speedcontrol');
 
@@ -44,13 +46,14 @@ class SixteenNineComponent {
           ]),
         ]),
         m('.run-timing', [
-          m('.timer', timerRep.value.time),
+          m(TimerComponent, { timerRep }),
           m('.estimate', `Estimate: ${safeRun().estimate}`),
         ]),
       ]),
     ]);
   }
 }
+
 
 NodeCG.waitForReplicants(runRep, timerRep).then(() => {
   m.mount(document.body, SixteenNineComponent);
