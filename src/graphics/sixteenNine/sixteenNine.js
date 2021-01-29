@@ -57,28 +57,32 @@ class RunnerComponent {
     ]);
   }
 
-  oncreate(vnode) {
+  onupdate(vnode) {
+    // kill existing animation on update
+    if (this.timeline) {
+      this.timeline.kill();
+    }
+
+    // if there's just runner name with no twitch, don't animate
     if (vnode.dom.children.length < 2) {
       return;
     }
 
+    // animation timeline
     const tl = gsap.timeline({ repeat: -1 });
 
+    // how long to display each element
     const hold = 10;
 
+    // fadein/pause/fadeout for each child element in sequence
     Array.from(vnode.dom.children).forEach((child) => {
       tl.from(child, { opacity: 0 });
       tl.to({}, hold, {});
       tl.to(child, { opacity: 0 });
     });
 
+    // hold reference to animation
     this.timeline = tl;
-  }
-
-  onremove() {
-    if (this.timeline) {
-      this.timeline.kill();
-    }
   }
 }
 

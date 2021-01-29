@@ -56,10 +56,14 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
 
   width: 100%;
   position: relative;
+}
+
+.runner-row > span {
+  flex-grow: 1;
+  text-align: center;
 }
 
 .runner-row.twitch {
@@ -69,6 +73,7 @@
 .runner-icon {
   background-color: var(--wasd-white);
   width: 35px; height: 35px;
+  margin: 0 10px;
 
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
