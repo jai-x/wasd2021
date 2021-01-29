@@ -1,6 +1,6 @@
 # wasd2021
 
-## installation
+## manual installation and running
 
 ```shell
 # install nodecg
@@ -33,5 +33,20 @@ $ cd ..
 $ git clone --depth 1 git@github.com:jai-x/wasd2021.git
 $ cd wasd2021
 $ npm ci
-$ cd ..
+
+# build
+npm run build
+
+# run
+npm run nodecg
+```
+
+## use with docker
+
+```shell
+# build
+$ docker build -t wasd2021:dev .
+
+# run
+$ docker run -p 9090:9090 wasd2021:dev
 ```
