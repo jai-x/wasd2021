@@ -34,6 +34,24 @@
         "width": 1920,
         "height": 1080,
         "singleInstance": false
+      },
+      {
+        "file": "fourThree/index.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "break/index.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "problems/index.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
       }
     ]
   },
@@ -48,6 +66,7 @@
   },
   "dependencies": {
     "gsap": "^3.6.0",
+    "lodash": "^4.17.20",
     "mithril": "^2.0.4"
   }
 }

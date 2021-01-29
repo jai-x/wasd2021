@@ -1,3 +1,7 @@
+.graphic.sixteen-nine {
+  background-image: linear-gradient(200deg, var(--wasd-magenta) 40%, var(--wasd-indigo));
+}
+
 .game {
   position: absolute;
   top: 0px; right: 0px;
@@ -7,6 +11,7 @@
   height: 900px;
 
   border-radius: 0px 0px 0px 10px;
+  border: 2px solid var(--wasd-white);
 }
 
 .left {
@@ -20,6 +25,61 @@
   width: 100%;
   height: 350px;
   background-color: var(--chroma-green);
+  border-radius: 0px 0px 10px 10px;
+  border: 2px solid var(--wasd-white);
+  border-right: none;
+}
+
+.runners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'MontserratBold';
+  color: var(--wasd-white);
+  font-size: 30px;
+}
+
+.runner-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+
+  margin-top: 7px;
+}
+
+.runner-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 100%;
+  position: relative;
+}
+
+.runner-row.twitch {
+  position: absolute;
+}
+
+.runner-icon {
+  background-color: var(--wasd-white);
+  width: 35px; height: 35px;
+
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.runner-icon.runner {
+  mask-image: url('../assets/running-solid.svg');
+}
+
+.runner-icon.twitch {
+  mask-image: url('../assets/twitch-brands.svg');
 }
 
 .bottom {
@@ -69,7 +129,6 @@
 .run-timing {
   width: 500px;
 }
-
 
 .estimate {
   font-size: 30px;

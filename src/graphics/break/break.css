@@ -1,0 +1,3 @@
+.graphic.break {
+  background-image: linear-gradient(190deg, var(--wasd-magenta) 5%, var(--wasd-indigo) 70%);
+}

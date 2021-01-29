@@ -1,0 +1,49 @@
+:root {
+  --starfall-color-1: #885DFF;
+  --starfall-color-2: #9B6DFF;
+  --starfall-color-3: #D86DFF;
+}
+
+.starfall-container {
+  position: absolute;
+  width: 3000px;
+  height: 1600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(15deg);
+}
+
+.starfall-star {
+  position: absolute;
+  opacity: 0.5;
+}
+
+.starfall-star.small {
+  width: 140px;
+  height: 20px;
+  border-radius: 20px;
+}
+
+.starfall-star.medium {
+  width: 330px;
+  height: 60px;
+  border-radius: 60px;
+}
+
+.starfall-star.large {
+  width: 400px;
+  height: 100px;
+  border-radius: 100px;
+}
+
+.starfall-star.color-1 {
+  background-image: linear-gradient(90deg, transparent 10%, var(--starfall-color-1));
+}
+
+.starfall-star.color-2 {
+  background-image: linear-gradient(90deg, transparent 10%, var(--starfall-color-2));
+}
+
+.starfall-star.color-3 {
+  background-image: linear-gradient(90deg, transparent 10%, var(--starfall-color-3));
+}

@@ -1,0 +1,27 @@
+.graphic.problems {
+  background-image: linear-gradient(190deg, var(--wasd-magenta) 5%, var(--wasd-indigo) 70%);
+}
+
+.problems-text {
+  color: var(--wasd-white);
+  font-family: 'MontserratBold';
+  font-size: 50px;
+
+  position: absolute;
+  bottom: 360px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.problems-image {
+  background-image: url('../assets/not_like_this.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

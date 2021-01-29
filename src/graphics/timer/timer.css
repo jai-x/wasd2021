@@ -6,7 +6,7 @@
   position: absolute;
   width: 100%; height: 100%;
   border-radius: 10px;
-  background-image: linear-gradient(40deg, var(--wasd-magenta), var(--wasd-indigo));
+  background-color: var(--wasd-blue);
   border: solid 1px var(--wasd-white);
   opacity: 0;
 }
