@@ -5,11 +5,9 @@ import './timer.css';
 
 export default class TimerComponent {
   view(vnode) {
-    const { time } = vnode.attrs.timerRep.value;
-
     return m('.timer-container', [
       m('.timer-flash'),
-      m('.timer-text', time),
+      m('.timer-text', vnode.attrs.time),
     ]);
   }
 

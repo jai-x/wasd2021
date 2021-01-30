@@ -65,6 +65,7 @@
     "rollup-plugin-postcss": "^4.0.0"
   },
   "dependencies": {
+    "fitty": "^2.3.3",
     "gsap": "^3.6.0",
     "lodash": "^4.17.20",
     "mithril": "^2.0.4"

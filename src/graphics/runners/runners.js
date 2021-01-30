@@ -1,12 +1,21 @@
 import m from 'mithril';
 import gsap from 'gsap';
+import { get } from 'lodash';
 
 import './runners.css';
 
 export default class RunnersComponent {
   view(vnode) {
+    if (!vnode.attrs.players) {
+      return null;
+    }
+
     return m('.runners-container', ...vnode.attrs.players.map((p) => {
-      return m(RunnerComponent, { name: p.name, key: p.name, twitch: p.social.twitch });
+      return m(RunnerComponent, {
+        name: p.name,
+        key: p.name,
+        twitch: get(p, 'social.twitch'),
+      });
     }));
   }
 }
