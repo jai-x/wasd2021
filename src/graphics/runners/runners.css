@@ -1,0 +1,60 @@
+.runners-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0px 0px 10px 10px;
+  border-bottom: 5px solid var(--wasd-white);
+
+  font-family: 'MontserratBold';
+  color: var(--wasd-white);
+  font-size: 30px;
+}
+
+.runner-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+
+  margin-top: 7px;
+}
+
+.runner-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 100%;
+  position: relative;
+}
+
+.runner-row > span {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.runner-row.twitch {
+  position: absolute;
+}
+
+.runner-icon {
+  background-color: var(--wasd-white);
+  width: 35px; height: 35px;
+  margin: 0 10px;
+
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.runner-icon.runner {
+  mask-image: url('../assets/running-solid.svg');
+}
+
+.runner-icon.twitch {
+  mask-image: url('../assets/twitch-brands.svg');
+}

@@ -1,11 +1,10 @@
 import m from 'mithril';
-import gsap from 'gsap';
-import { get } from 'lodash';
 
 import '../common.css'
 import './sixteenNine.css';
 
 import TimerComponent from '../timer/timer.js';
+import RunnersComponent from '../runners/runners.js';
 import StarfallComponent from '../starfall/starfall.js';
 
 const runRep = NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol');
@@ -31,61 +30,6 @@ const blankRun = {
 const safeRun = () => (runRep.value || blankRun);
 const sep = '/';
 
-class RunnerComponent {
-  view(vnode) {
-    const name = get(vnode, 'attrs.runner.name');
-    const twitch = get(vnode, 'attrs.runner.social.twitch');
-
-    if (!twitch) {
-      return m('.runner-container', [
-        m('.runner-row', [
-          m('.runner-icon .runner'),
-          m('span', name),
-        ])
-      ]);
-    }
-
-    return m('.runner-container', [
-      m('.runner-row', [
-        m('.runner-icon .runner'),
-        m('span', name),
-      ]),
-      m('.runner-row .twitch', [
-        m('.runner-icon .twitch'),
-        m('span', twitch),
-      ]),
-    ]);
-  }
-
-  onupdate(vnode) {
-    // kill existing animation on update
-    if (this.timeline) {
-      this.timeline.kill();
-    }
-
-    // if there's just runner name with no twitch, don't animate
-    if (vnode.dom.children.length < 2) {
-      return;
-    }
-
-    // animation timeline
-    const tl = gsap.timeline({ repeat: -1 });
-
-    // how long to display each element
-    const hold = 10;
-
-    // fadein/pause/fadeout for each child element in sequence
-    Array.from(vnode.dom.children).forEach((child) => {
-      tl.from(child, { opacity: 0 });
-      tl.to({}, hold, {});
-      tl.to(child, { opacity: 0 });
-    });
-
-    // hold reference to animation
-    this.timeline = tl;
-  }
-}
-
 class SixteenNineComponent {
   view() {
     return m('.graphic .sixteen-nine', [
@@ -93,9 +37,13 @@ class SixteenNineComponent {
       m('.game'),
       m('.left', [
         m('.cam'),
-        m('.runners', ...safeRun().teams[0].players.map((p) => {
-          return m(RunnerComponent, { runner: p });
-        })),
+        m(RunnersComponent, { players: safeRun().teams[0].players }),
+        m('.left-info', [
+          m('.special-effect-logo'),
+          //m('.x', 'X'),
+          m('.wasd-logo'),
+          m('.total', `£${Math.floor(totalRep.value)}`),
+        ]),
       ]),
       m('.bottom',[
         m('.run-details', [
