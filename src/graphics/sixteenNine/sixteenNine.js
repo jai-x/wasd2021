@@ -26,7 +26,10 @@ class SixteenNineComponent {
       m('.game'),
       m('.left', [
         m('.cam'),
-        m(RunnersComponent, { players: get(vnode, 'attrs.run.teams[0].players') }),
+        m(RunnersComponent, {
+          players: get(vnode, 'attrs.run.teams[0].players'),
+          customData: get(vnode, 'attrs.run.customData'),
+        }),
         m('.left-info', [
           m('.special-effect-logo'),
           //m('.x', 'X'),

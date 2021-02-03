@@ -10,33 +10,68 @@ export default class RunnersComponent {
       return null;
     }
 
-    return m('.runners-container', ...vnode.attrs.players.map((p) => {
+    return m('.runners-container', ...vnode.attrs.players.map((p, i) => {
       return m(RunnerComponent, {
         name: p.name,
         key: p.name,
         twitch: get(p, 'social.twitch'),
+        pronouns: get(vnode, `attrs.customData.p${i+1}Pronouns`),
       });
     }));
   }
 }
 
+class RunnerPronouns {
+  view(vnode) {
+    const { pronouns } = vnode.attrs;
+
+    if (!pronouns) {
+      return null;
+    }
+
+    return m('.runner-pronouns', pronouns);
+  }
+}
+
+class RunnerRowName {
+  view(vnode) {
+    const { name, pronouns } = vnode.attrs;
+
+    return m('.runner-row .name', [
+      m('.runner-icon .runner'),
+      m('.runner-label', name),
+      m(RunnerPronouns, { pronouns: pronouns }),
+    ]);
+  }
+}
+
+class RunnerRowTwitch {
+  view(vnode) {
+    const { twitch, pronouns } = vnode.attrs;
+
+    if (!twitch) {
+      return null;
+    }
+
+    return m('.runner-row .twitch', [
+      m('.runner-icon .twitch'),
+      m('.runner-label', twitch),
+      //m(RunnerPronouns, { pronouns: pronouns }),
+    ]);
+  }
+}
+
 class RunnerComponent {
   view(vnode) {
-    const { name, twitch, key } = vnode.attrs;
+    const { name, twitch, key, pronouns } = vnode.attrs;
 
     if (!key) {
       throw 'RunnerComponent requires `key` attribute';
     }
 
     return m('.runner-container', [
-      m('.runner-row', [
-        m('.runner-icon .runner'),
-        m('span', name),
-      ]),
-      (twitch) ? m('.runner-row .twitch', [
-        m('.runner-icon .twitch'),
-        m('span', twitch),
-      ]) : null,
+      m(RunnerRowName, { name: name, pronouns: pronouns }),
+      m(RunnerRowTwitch, { twitch: twitch, pronouns: pronouns }),
     ]);
   }
 

@@ -1,0 +1,26 @@
+{
+  "schedule": {
+    "customData": [
+      {
+        "name": "P1 Pronouns",
+        "key": "p1Pronouns",
+        "ignoreMarkdown": true
+      },
+      {
+        "name": "P2 Pronouns",
+        "key": "p2Pronouns",
+        "ignoreMarkdown": true
+      },
+      {
+        "name": "P3 Pronouns",
+        "key": "p3Pronouns",
+        "ignoreMarkdown": true
+      },
+      {
+        "name": "P4 Pronouns",
+        "key": "p4Pronouns",
+        "ignoreMarkdown": true
+      }
+    ]
+  }
+}

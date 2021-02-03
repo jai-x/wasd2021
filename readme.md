@@ -34,11 +34,14 @@ $ git clone --depth 1 git@github.com:jai-x/wasd2021.git
 $ cd wasd2021
 $ npm ci
 
+# config
+$ cp cfg/* ../../cfg
+
 # build
-npm run build
+$ npm run build
 
 # run
-npm run nodecg
+$ npm run nodecg
 ```
 
 ## use with docker

@@ -10,7 +10,6 @@
 
   font-family: 'MontserratBold';
   color: var(--wasd-white);
-  font-size: 30px;
 
   padding-top: 7px;
   padding-bottom: 3px;
@@ -32,12 +31,12 @@
   align-items: center;
 
   width: 100%;
-  position: relative;
+  height: 37px;
+  padding: 0 7px;
 }
 
-.runner-row > span {
-  flex-grow: 1;
-  text-align: center;
+.runner-row.name {
+  position: relative;
 }
 
 .runner-row.twitch {
@@ -45,8 +44,8 @@
 }
 
 .runner-icon {
-  width: 35px; height: 37px;
-  margin: 5px 10px;
+  height: 100%;
+  width: 35px;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -57,4 +56,16 @@
 
 .runner-icon.twitch {
   background-image: url('../assets/twitch-brands.svg');
+}
+
+.runner-label {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 3px; /* required to center it despite the flexbox */
+}
+
+.runner-pronouns {
+  font-size: 14px;
+  text-align: center;
 }

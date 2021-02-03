@@ -63,7 +63,10 @@ class FourThreeComponent {
           m('.run-estimate', `Estimate: ${vnode.attrs.run.estimate}`),
         ]),
         m('.cam'),
-        m(RunnersComponent, { players: get(vnode, 'attrs.run.teams[0].players') }),
+        m(RunnersComponent, {
+          players: get(vnode, 'attrs.run.teams[0].players'),
+          customData: get(vnode, 'attrs.run.customData'),
+        }),
         m('.info', [
           m('.special-effect-logo'),
           m('.wasd-logo'),

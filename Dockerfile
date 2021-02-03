@@ -37,6 +37,9 @@ COPY src/ ./src/
 RUN npm ci
 RUN npm run build
 
+WORKDIR /nodecg
+RUN cp /nodecg/bundles/wasd2021/cfg ./cfg
+
 EXPOSE 9090
 
 ENTRYPOINT ["node", "/nodecg/index.js"]
