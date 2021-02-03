@@ -1,7 +1,16 @@
 :root {
-  --starfall-color-1: #885DFF;
-  --starfall-color-2: #9B6DFF;
-  --starfall-color-3: #D86DFF;
+  --starfall-color-small-1: #FFB6D1;
+  --starfall-color-small-2: #F78AA9;
+  --starfall-color-small-3: #CF95FF;
+
+  --starfall-color-medium-1:  #E68BF2;
+  --starfall-color-medium-2:  #F477FF;
+  --starfall-color-medium-3:  #D86DFF;
+  --starfall-color-medium-4:  #FF65E0;
+
+  --starfall-color-large-1: #D971FF;
+  --starfall-color-large-2: #9B6DFF;
+  --starfall-color-large-3: #885DFF;
 }
 
 .starfall-container {
@@ -24,10 +33,38 @@
   border-radius: 20px;
 }
 
+.starfall-star.small.color-1 {
+  background-image: linear-gradient(90deg, transparent 10%, var(--starfall-color-small-1));
+}
+
+.starfall-star.small.color-2 {
+  background-image: linear-gradient(90deg, transparent 20%, var(--starfall-color-small-2));
+}
+
+.starfall-star.small.color-3 {
+  background-image: linear-gradient(90deg, transparent 30%, var(--starfall-color-small-3));
+}
+
 .starfall-star.medium {
   width: 330px;
   height: 60px;
   border-radius: 60px;
+}
+
+.starfall-star.medium.color-1 {
+  background-image: linear-gradient(90deg, transparent 10%, var(--starfall-color-medium-1));
+}
+
+.starfall-star.medium.color-2 {
+  background-image: linear-gradient(90deg, transparent 20%, var(--starfall-color-medium-2));
+}
+
+.starfall-star.medium.color-3 {
+  background-image: linear-gradient(90deg, transparent 30%, var(--starfall-color-medium-3));
+}
+
+.starfall-star.medium.color-4 {
+  background-image: linear-gradient(90deg, transparent 40%, var(--starfall-color-medium-4));
 }
 
 .starfall-star.large {
@@ -36,14 +73,14 @@
   border-radius: 100px;
 }
 
-.starfall-star.color-1 {
-  background-image: linear-gradient(90deg, transparent 10%, var(--starfall-color-1));
+.starfall-star.large.color-1 {
+  background-image: linear-gradient(90deg, transparent 10%, var(--starfall-color-large-1));
 }
 
-.starfall-star.color-2 {
-  background-image: linear-gradient(90deg, transparent 10%, var(--starfall-color-2));
+.starfall-star.large.color-2 {
+  background-image: linear-gradient(90deg, transparent 20%, var(--starfall-color-large-2));
 }
 
-.starfall-star.color-3 {
-  background-image: linear-gradient(90deg, transparent 10%, var(--starfall-color-3));
+.starfall-star.large.color-3 {
+  background-image: linear-gradient(90deg, transparent 30%, var(--starfall-color-large-3));
 }

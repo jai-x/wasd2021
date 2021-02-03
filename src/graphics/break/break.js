@@ -7,9 +7,7 @@ import StarfallComponent from '../starfall/starfall.js';
 
 class BreakComponent {
   view() {
-    return m('.graphic .break', [
-      m(StarfallComponent),
-    ]);
+    return m('.graphic .break', m(StarfallComponent));
   }
 }
 

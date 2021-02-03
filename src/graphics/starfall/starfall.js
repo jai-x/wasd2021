@@ -4,38 +4,45 @@ import { range, sample } from 'lodash';
 
 import './starfall.css';
 
-const NUM_STARS = 20;
-const MAX_X = 3000;
-const MAX_Y = 1600;
-const MAX_DELAY = 10;
+const CONF = {
+  numStars: 20,
+  x:     { min: 0, max: 3000 },
+  y:     { min: 0, max: 1600 },
+  delay: { min: 0, max: 20 },
+  sizes: [
+    { name: 'small',  duration: 10, colors: ['color-1', 'color-2', 'color-3'], },
+    { name: 'medium', duration: 15, colors: ['color-1', 'color-2', 'color-3', 'color-4'] },
+    { name: 'large',  duration: 24, colors: ['color-1', 'color-2', 'color-3'] },
+  ],
+};
 
 export default class StarfallComponent {
   view() {
-    return m('.starfall-container', ...range(NUM_STARS).map(() => m(StarfallStar)));
+    return m('.starfall-container', ...range(CONF.numStars).map(() => m(StarfallStar)));
   }
 }
 
 class StarfallStar {
   oninit() {
-    this.startPos = { y: gsap.utils.random(0, MAX_Y) };
-    this.size = sample(['small', 'medium', 'large']);
-    this.duration = { small: 10, medium: 12, large: 24 }[this.size];
-    this.color = sample(['color-1', 'color-2', 'color-3']);
+    this.size = sample(CONF.sizes);
   }
 
   view() {
-    return m(`.starfall-star ${this.size} ${this.color}`);
+    return m(`.starfall-star ${this.size.name} ${sample(this.size.colors)}`);
   }
 
   oncreate(vnode) {
-    gsap.set(vnode.dom, this.startPos);
+    const randomY = () => ({ y: gsap.utils.random(CONF.y.min, CONF.y.max) });
+
+    gsap.set(vnode.dom, randomY());
+
     gsap.to(vnode.dom, {
-      x: `+=${MAX_X}`,
-      duration: this.duration,
-      ease: 'linear',
+      x: `+=${CONF.x.max}`,
+      duration: this.size.duration,
+      ease: 'power1.in',
       repeat: -1,
-      delay: gsap.utils.random(0, MAX_DELAY),
-      onRepeat: () => { gsap.set(vnode.dom, { y: gsap.utils.random(0, MAX_Y) }) },
+      delay: gsap.utils.random(CONF.delay.min, CONF.delay.max),
+      onRepeat: () => { gsap.set(vnode.dom, randomY()) },
     });
   }
 }
