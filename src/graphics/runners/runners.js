@@ -28,24 +28,15 @@ class RunnerComponent {
       throw 'RunnerComponent requires `key` attribute';
     }
 
-    if (!twitch) {
-      return m('.runner-container', [
-        m('.runner-row', [
-          m('.runner-icon .runner'),
-          m('span', name),
-        ])
-      ]);
-    }
-
     return m('.runner-container', [
       m('.runner-row', [
         m('.runner-icon .runner'),
         m('span', name),
       ]),
-      m('.runner-row .twitch', [
+      (twitch) ? m('.runner-row .twitch', [
         m('.runner-icon .twitch'),
         m('span', twitch),
-      ]),
+      ]) : null,
     ]);
   }
 
