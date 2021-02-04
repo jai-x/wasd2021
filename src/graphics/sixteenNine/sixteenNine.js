@@ -39,18 +39,18 @@ class SixteenNineComponent {
       ]),
       m('.bottom',[
         m('.run-details', [
-          m('.run-game', vnode.attrs.run.game),
+          m('.run-game', String(get(vnode, 'attrs.run.game'))),
           m('.run-details-row', [
-            m('div', vnode.attrs.run.system),
+            m('div', String(get(vnode, 'attrs.run.system'))),
             m('div', sep),
-            m('div', vnode.attrs.run.release),
+            m('div', String(get(vnode, 'attrs.run.release'))),
             m('div', sep),
-            m('div', vnode.attrs.run.category),
+            m('div', String(get(vnode, 'attrs.run.category'))),
           ]),
         ]),
         m('.run-timing', [
           m(TimerComponent, { time: vnode.attrs.time }),
-          m('.estimate', `Estimate: ${vnode.attrs.run.estimate}`),
+          m('.estimate', `Estimate: ${get(vnode, 'attrs.run.estimate')}`),
         ]),
       ]),
     ]);
@@ -62,7 +62,7 @@ NodeCG.waitForReplicants(runRep, timerRep, totalRep).then(() => {
   m.mount(document.body, {
     view: () => {
       return m(SixteenNineComponent, {
-        run: (runRep.value || blankRun),
+        run: runRep.value,
         time: timerRep.value.time,
         total: Math.floor(totalRep.value),
       });

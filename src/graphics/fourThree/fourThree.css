@@ -35,8 +35,9 @@
   border-top: 5px solid var(--wasd-white);
 }
 
-.run-details {
+.run-info {
   width: 100%;
+  height: 125px;
 
   font-family: 'DaggerSquareOblique';
   color: var(--wasd-white);
@@ -62,6 +63,7 @@
 
 .run-timing {
   width: 100%;
+  height: 120px;
 
   font-family: 'DaggerSquareOblique';
   color: var(--wasd-white);

@@ -18,7 +18,7 @@ const totalRep = NodeCG.Replicant('total', 'nodecg-tiltify');
 
 class RunGameComponent {
   view(vnode) {
-    return m('.run-game', vnode.attrs.game);
+    return m('.run-game', String(vnode.attrs.game));
   }
 
   onupdate(vnode) {
@@ -32,7 +32,9 @@ class RunGameComponent {
 
 class RunDetailsComponent {
   view(vnode) {
-    const { system, release, category } = vnode.attrs.run;
+    const system = get(vnode, 'attrs.run.system');
+    const release = get(vnode, 'attrs.run.release');
+    const category = get(vnode, 'attrs.run.category');
     const sep = '/';
 
     return  m('.run-details', `${system}  ${sep}  ${release}  ${sep}  ${category}`);
@@ -53,14 +55,14 @@ class FourThreeComponent {
       m(StarfallComponent),
       m('.game'),
       m('.left', [
-        m('.run-details', [
-          m(RunGameComponent, { game:  vnode.attrs.run.game }),
-          m(RunDetailsComponent, { run: vnode.attrs.run }),
+        m('.run-info', [
+          m(RunGameComponent, { game: get(vnode, 'attrs.run.game') }),
+          m(RunDetailsComponent, { run: get(vnode, 'attrs.run') }),
         ]),
         m('.h-spacer'),
         m('.run-timing', [
           m(TimerComponent, { time: vnode.attrs.time }),
-          m('.run-estimate', `Estimate: ${vnode.attrs.run.estimate}`),
+          m('.run-estimate', `Estimate: ${get(vnode, 'attrs.run.estimate')}`),
         ]),
         m('.cam'),
         m(RunnersComponent, {
@@ -81,7 +83,7 @@ NodeCG.waitForReplicants(runRep, timerRep, totalRep).then(() => {
   m.mount(document.body, {
     view: () => {
       return m(FourThreeComponent, {
-        run: (runRep.value || blankRun),
+        run: runRep.value,
         time: timerRep.value.time,
         total: Math.floor(totalRep.value),
       });
