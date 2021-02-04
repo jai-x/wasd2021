@@ -8,14 +8,9 @@ import TimerComponent from '../timer/timer.js';
 import RunnersComponent from '../runners/runners.js';
 import StarfallComponent from '../starfall/starfall.js';
 
-import blankRun from '../blankRun.js';
-
 const runRep = NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol');
 const timerRep = NodeCG.Replicant('timer', 'nodecg-speedcontrol');
 const totalRep = NodeCG.Replicant('total', 'nodecg-tiltify');
-
-let run = null;
-const updateRun = () => { run = (runRep.value || blankRun); };
 
 const sep = '/';
 
