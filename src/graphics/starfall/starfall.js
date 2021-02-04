@@ -23,12 +23,13 @@ export default class StarfallComponent {
 }
 
 class StarfallStar {
-  oninit() {
+  oninit(vnode) {
     this.size = sample(CONF.sizes);
+    this.color = sample(this.size.colors);
   }
 
-  view() {
-    return m(`.starfall-star ${this.size.name} ${sample(this.size.colors)}`);
+  view(vnode) {
+    return m(`.starfall-star ${this.size.name} ${this.color}`);
   }
 
   oncreate(vnode) {
