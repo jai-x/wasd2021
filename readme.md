@@ -23,9 +23,9 @@ $ cd nodecg-tiltify
 $ npm ci
 $ cd ..
 
-# ncg-spotify
-$ git clone --depth 1 git@github.com:EwanLyon/ncg-spotify.git
-$ cd ncg-spotify
+# nodecg-spotify
+$ git clone --depth 1 git@github.com:jai-x/nodecg-spotify.git
+$ cd nodecg-spotify
 $ npm ci
 $ cd ..
 
@@ -41,7 +41,7 @@ $ cp cfg/* ../../cfg
 $ npm run build
 
 # run
-$ npm run nodecg
+$ npm run start
 ```
 
 ## use with docker

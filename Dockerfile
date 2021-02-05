@@ -23,10 +23,10 @@ RUN git clone --depth 1 https://github.com/daniellockard/nodecg-tiltify.git
 WORKDIR /nodecg/bundles/nodecg-tiltify
 RUN npm ci
 
-# ncg-spotify
+# nodecg-spotify
 WORKDIR /nodecg/bundles
-RUN git clone --depth 1 https://github.com/EwanLyon/ncg-spotify.git
-WORKDIR /nodecg/bundles/ncg-spotify
+RUN git clone --depth 1 https://github.com/jai-x/nodecg-spotify.git
+WORKDIR /nodecg/bundles/nodecg-spotify
 RUN npm ci
 
 # wasd2021
