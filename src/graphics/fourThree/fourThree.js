@@ -7,6 +7,7 @@ import './fourThree.css';
 
 import TimerComponent from '../timer/timer.js';
 import RunnersComponent from '../runners/runners.js';
+import CouchComponent from '../couch/couch.js';
 import StarfallComponent from '../starfall/starfall.js';
 
 const runRep = NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol');
@@ -56,7 +57,7 @@ class FourThreeComponent {
           m(RunGameComponent, { game: get(vnode, 'attrs.run.game') }),
           m(RunDetailsComponent, { run: get(vnode, 'attrs.run') }),
         ]),
-        m('.h-spacer'),
+        m('.run-spacer'),
         m('.run-timing', [
           m(TimerComponent, { time: vnode.attrs.time }),
           m('.run-estimate', `Estimate: ${get(vnode, 'attrs.run.estimate')}`),
@@ -66,10 +67,10 @@ class FourThreeComponent {
           players: get(vnode, 'attrs.run.teams[0].players'),
           customData: get(vnode, 'attrs.run.customData'),
         }),
-        m('.info', [
-          m('.special-effect-logo'),
-          m('.wasd-logo'),
-          m('.total', `£${vnode.attrs.total}`),
+        m(CouchComponent, { customData: get(vnode, 'attrs.run.customData') }),
+        m('.logos', [
+          m('.logo .wasd'),
+          m('.logo .special-effect'),
         ]),
       ]),
     ]);

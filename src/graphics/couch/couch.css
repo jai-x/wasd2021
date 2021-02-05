@@ -1,0 +1,36 @@
+.couch-container {
+  font-family: 'DaggerSquareOblique';
+  letter-spacing: 2px;
+  color: var(--wasd-white);
+  width: 90%;
+  padding: 12px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-bottom: 2px solid var(--wasd-white-muted);
+}
+
+.couch-label {
+  color: var(--wasd-white-muted);
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.couch-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 90%;
+}
+
+.couch-person {
+  font-size: 28px;
+}
+
+.couch-pronouns {
+  font-size: 14px;
+}

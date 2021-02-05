@@ -1,17 +1,16 @@
 .graphic.sixteen-nine {
-  background-image: linear-gradient(200deg, var(--wasd-magenta) 40%, var(--wasd-indigo));
+  background-image: linear-gradient(7deg, var(--wasd-magenta) -10%, var(--wasd-violet) 50%);
 }
 
 .game {
   position: absolute;
   top: 0px; right: 0px;
-  background-color: var(--chroma-green);
 
-  width: 1600px;
-  height: 900px;
+  width: 1530px;
+  height: 860px;
 
-  border-radius: 0px 0px 0px 10px;
-  border: 5px solid var(--wasd-white);
+  border-radius: 0px 0px 0px 5px;
+  border: 5px solid var(--wasd-pink);
   border-top: none;
   border-right: none;
 }
@@ -19,8 +18,8 @@
 .left {
   position: absolute;
   top: 0px; left: 0px;
-  height: 1080px;
-  width: 320px;
+  height: 100%;
+  width: 390px;
 
   display: flex;
   flex-direction: column;
@@ -30,13 +29,11 @@
 
 .cam {
   width: 100%;
-  min-height: 330px;
-  background-color: var(--chroma-green);
-  border-radius: 0px 0px 10px 10px;
-  border-bottom: 5px solid var(--wasd-white);
+  min-height: 360px;
+  border-bottom: 5px solid var(--wasd-pink);
 }
 
-.left-info {
+.logos {
   width: 100%;
   flex-grow: 1;
 
@@ -44,55 +41,41 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  padding: 30px 0;
 }
 
-.wasd-logo {
+.logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.logo.wasd {
   background-image: url('../assets/wasd-avatar.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   width: 180px;
-  height: 180px;
+  margin-bottom: -50px;
 }
 
-.special-effect-logo {
+.logo.special-effect {
   background-image: url('../assets/specialeffect-white.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 300px;
-  height: 100px;
+  width: 350px;
 }
 
-.total {
-  color: var(--wasd-white);
-  font-family: 'DaggerSquareOblique';
-  font-size: 50px;
-}
-
-.x {
-  color: var(--wasd-white);
-  font-family: 'MontserratBold';
-  font-size: 20px;
-
-  margin-top: -100px;
-  margin-bottom: -80px;
-}
-
-
-/* -------------- BOTTOM --------------- */
 .bottom {
   font-family: 'DaggerSquareOblique';
+  letter-spacing: 1px;
   color: var(--wasd-white);
 
   position: absolute;
   bottom: 0px; right: 0px;
-  width: 1600px; height: 180px;
+  width: 1530px; height: 150px;
 
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 10px;
-  padding: 10px 10px 10px 0;
 }
 
 .bottom > div {
@@ -100,21 +83,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  border-radius: 10px;
-  border: 5px solid var(--wasd-white);
+  height: 80%;
 }
 
 .run-details {
   flex-grow: 1; /* grow to available size in parent */
+  border-left: 2px solid var(--wasd-white-muted);
+  border-right: 2px solid var(--wasd-white-muted);
 }
 
 .run-game {
-  font-size: 62px;
+  font-size: 56px;
 }
 
 .run-details-row {
-  font-size: 30px;
+  font-size: 26px;
 
   display: flex;
   flex-direction: row;
@@ -131,5 +114,5 @@
 }
 
 .estimate {
-  font-size: 30px;
+  font-size: 26px;
 }

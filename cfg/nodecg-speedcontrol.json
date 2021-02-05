@@ -2,23 +2,43 @@
   "schedule": {
     "customData": [
       {
-        "name": "P1 Pronouns",
+        "name": "P1 Pronouns (optional)",
         "key": "p1Pronouns",
         "ignoreMarkdown": true
       },
       {
-        "name": "P2 Pronouns",
+        "name": "P2 Pronouns (optional)",
         "key": "p2Pronouns",
         "ignoreMarkdown": true
       },
       {
-        "name": "P3 Pronouns",
+        "name": "P3 Pronouns (optional)",
         "key": "p3Pronouns",
         "ignoreMarkdown": true
       },
       {
-        "name": "P4 Pronouns",
+        "name": "P4 Pronouns (optional)",
         "key": "p4Pronouns",
+        "ignoreMarkdown": true
+      },
+      {
+        "name": "Couch 1 Name (optional)",
+        "key": "c1Name",
+        "ignoreMarkdown": true
+      },
+      {
+        "name": "Couch 1 Pronouns (optional)",
+        "key": "c1Pronouns",
+        "ignoreMarkdown": true
+      },
+      {
+        "name": "Couch 2 Name (optional)",
+        "key": "c2Name",
+        "ignoreMarkdown": true
+      },
+      {
+        "name": "Couch 2 Pronouns (optional)",
+        "key": "c2Pronouns",
         "ignoreMarkdown": true
       }
     ]

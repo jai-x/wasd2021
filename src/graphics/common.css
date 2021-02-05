@@ -17,11 +17,13 @@
   --wasd-blue: #3C99FF;
   --wasd-teal: #83FFCE;
   --wasd-white: #FFFFFF;
+  --wasd-white-muted: #E4C1EC;
   --wasd-black: #4A4A4A;
   --wasd-indigo: #3300A4;
   --wasd-purple: rgb(146, 116, 255);
   --wasd-violet: #8338EC;
   --wasd-magenta: #FF006E;
+  --wasd-pink: #FF71E6;
   --wasd-light-blue: #57EDFF;
 
   --chroma-green: #00FF00;
@@ -46,7 +48,7 @@ body {
 
 .graphic {
   width: 1920px;
-  height: 1080px;
+  height: 1010px;
 
   overflow: hidden;
   position: relative;

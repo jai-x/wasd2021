@@ -6,6 +6,7 @@ import './sixteenNine.css';
 
 import TimerComponent from '../timer/timer.js';
 import RunnersComponent from '../runners/runners.js';
+import CouchComponent from '../couch/couch.js';
 import StarfallComponent from '../starfall/starfall.js';
 
 const runRep = NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol');
@@ -25,11 +26,10 @@ class SixteenNineComponent {
           players: get(vnode, 'attrs.run.teams[0].players'),
           customData: get(vnode, 'attrs.run.customData'),
         }),
-        m('.left-info', [
-          m('.special-effect-logo'),
-          //m('.x', 'X'),
-          m('.wasd-logo'),
-          m('.total', `£${vnode.attrs.total}`),
+        m(CouchComponent, { customData: get(vnode, 'attrs.run.customData') }),
+        m('.logos', [
+          m('.logo .wasd'),
+          m('.logo .special-effect'),
         ]),
       ]),
       m('.bottom',[
@@ -65,6 +65,6 @@ NodeCG.waitForReplicants(runRep, timerRep, totalRep).then(() => {
   });
 });
 
-runRep.on('change', () => { updateRun(); m.redraw(); });
+runRep.on('change', () => { m.redraw(); });
 timerRep.on('change', () => { m.redraw(); });
 totalRep.on('change', () => { m.redraw(); });
