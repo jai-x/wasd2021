@@ -14,7 +14,19 @@ class BreakComponent {
   view(vnode) {
     return m('.graphic .fullscreen', [
       m(StarfallComponent),
-      m(CurrentSongComponent, vnode.attrs.currentSong),
+      m('.break-container', [
+        m('.left', [
+          m('.countdown-container', [
+            m('.countdown-label', 'BACK SOON'),
+            m('.countdown-time', '00:00:00'),
+          ]),
+          m('.logo .wasd'),
+          m('.logo .special-effect'),
+          m(CurrentSongComponent, vnode.attrs.currentSong),
+        ]),
+        m('.v-space'),
+        m('.right'),
+      ]),
     ]);
   }
 }

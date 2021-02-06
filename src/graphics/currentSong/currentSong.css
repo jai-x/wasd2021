@@ -1,12 +1,8 @@
 .current-song-container {
-  position: absolute;
-  bottom: 30px; left: 30px;
-
   width: 420px;
   height: 120px;
   background-color: var(--wasd-white);
   border-radius: 7px;
-  box-shadow: 0 0 10px var(--wasd-black);
 
   display: flex;
   flex-direction: row;

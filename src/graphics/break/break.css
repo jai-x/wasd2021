@@ -1,0 +1,72 @@
+.break-container {
+  width: 100%;
+  height: 100%;
+
+  padding: 160px 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1;
+}
+
+.left {
+  height: 100%;
+  width: 500px;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.countdown-container {
+  font-family: 'DaggerSquareOblique';
+  letter-spacing: 2px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.countdown-label {
+  font-size: 20px;
+  color: var(--wasd-white-muted);
+}
+
+.countdown-time {
+  font-size: 64px;
+  color: var(--wasd-white);
+}
+
+.logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+}
+
+.logo.wasd {
+  background-image: url('../assets/wasd-keys.svg');
+  height: 210px;
+}
+
+.logo.special-effect {
+  background-image: url('../assets/specialeffect-white.png');
+  height: 160px;
+}
+
+.v-space {
+  height: 100%;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--wasd-pink);
+}
+
+.right {
+  height: 100%;
+  flex-grow: 1;
+}
