@@ -7,7 +7,7 @@ import StarfallComponent from '../starfall/starfall.js';
 
 class ProblemsComponent {
   view() {
-    return m('.graphic .problems', [
+    return m('.graphic .fullscreen', [
       m(StarfallComponent),
       m('.problems-text', 'Technical Difficulties'),
       m('.problems-image'),

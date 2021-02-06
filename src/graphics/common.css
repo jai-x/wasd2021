@@ -18,7 +18,8 @@
   --wasd-teal: #83FFCE;
   --wasd-white: #FFFFFF;
   --wasd-white-muted: #E4C1EC;
-  --wasd-black: #4A4A4A;
+  --wasd-black: #000000;
+  --wasd-black-muted: #4A4A4A;
   --wasd-indigo: #3300A4;
   --wasd-purple: rgb(146, 116, 255);
   --wasd-violet: #8338EC;
@@ -47,9 +48,18 @@ body {
 }
 
 .graphic {
-  width: 1920px;
-  height: 1010px;
-
   overflow: hidden;
   position: relative;
+
+  background-image: linear-gradient(7deg, var(--wasd-magenta) -10%, var(--wasd-violet) 50%);
+}
+
+.graphic.overlay {
+  width: 1920px;
+  height: 1010px;
+}
+
+.graphic.fullscreen {
+  width: 1920px;
+  height: 1080px;
 }

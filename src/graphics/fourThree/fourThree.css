@@ -1,10 +1,3 @@
-.graphic.four-three {
-  /*
-  background-image: linear-gradient(222deg, var(--wasd-magenta) 40%, var(--wasd-indigo));
-  */
-  background-image: linear-gradient(7deg, var(--wasd-magenta) -10%, var(--wasd-violet) 50%);
-}
-
 .game {
   position: absolute;
   top: 0px; right: 0px;

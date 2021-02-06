@@ -1,7 +1,3 @@
-.graphic.problems {
-  background-image: linear-gradient(190deg, var(--wasd-magenta) 5%, var(--wasd-indigo) 70%);
-}
-
 .problems-text {
   color: var(--wasd-white);
   font-family: 'DaggerSquareOblique';

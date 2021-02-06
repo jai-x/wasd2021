@@ -17,7 +17,7 @@ const sep = '/';
 
 class SixteenNineComponent {
   view(vnode) {
-    return m('.graphic .sixteen-nine', [
+    return m('.graphic .overlay', [
       m(StarfallComponent),
       m('.game'),
       m('.left', [

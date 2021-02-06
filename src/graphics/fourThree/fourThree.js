@@ -49,7 +49,7 @@ class RunDetailsComponent {
 
 class FourThreeComponent {
   view(vnode) {
-    return m('.graphic .four-three', [
+    return m('.graphic .overlay', [
       m(StarfallComponent),
       m('.game'),
       m('.left', [
