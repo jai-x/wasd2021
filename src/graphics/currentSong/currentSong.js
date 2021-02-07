@@ -22,7 +22,7 @@ class ScrollText {
 
     if (this.scroll) {
       this.scroll.kill();
-      gsap.set(vnode.dom, { clearProps: 'transform', opacity: 1 });
+      gsap.set(vnode.dom, { clearProps: 'transform' });
     }
 
     const parentPadding = 2 * parseInt(window.getComputedStyle(vnode.dom.parentElement).paddingLeft, 10);
@@ -34,14 +34,19 @@ class ScrollText {
       return;
     }
 
-    const diff = textWidth - parentWidth;
+    const distance = textWidth - parentWidth;
+    const speed = 22; // pixels per second
 
     const tl = gsap.timeline({ repeat: -1 });
 
+    tl.to({}, 3, {});
+    tl.to(vnode.dom, {
+      x: `-=${distance}`,
+      ease: 'none',
+      duration: distance / speed,
+    });
     tl.to({}, 2, {});
-    tl.to(vnode.dom, { x: `-=${diff}`, ease: 'none', duration: diff / 10,});
-    tl.to(vnode.dom, { opacity: 0 });
-    tl.set(vnode.dom, { clearProps: 'transform', opacity: 1 });
+    tl.to(vnode.dom, { x: 0 });
 
     this.scroll = tl;
   }
