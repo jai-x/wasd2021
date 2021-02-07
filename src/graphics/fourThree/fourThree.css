@@ -98,9 +98,9 @@
 }
 
 .logo.wasd {
-  background-image: url('../assets/wasd-avatar.png');
-  width: 190px;
-  margin-bottom: -30px;
+  background-image: url('../assets/wasd-keys.svg');
+  width: 270px;
+  margin-bottom: -20px;
 }
 
 .logo.special-effect {

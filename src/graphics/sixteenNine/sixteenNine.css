@@ -49,9 +49,8 @@
 }
 
 .logo.wasd {
-  background-image: url('../assets/wasd-avatar.png');
-  width: 180px;
-  margin-bottom: -50px;
+  background-image: url('../assets/wasd-keys.svg');
+  width: 270px;
 }
 
 .logo.special-effect {

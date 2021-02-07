@@ -10,15 +10,26 @@
 }
 
 .problems-image {
-  background-image: url('../assets/not_like_this.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 200px;
-  height: 200px;
-
   position: absolute;
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.problems-image.notlikethis {
+  width: 200px;
+  height: 200px;
+
+  background-image: url('../assets/not_like_this.png');
+}
+
+.problems-image.wasd {
+  width: 300px;
+  height: 200px;
+
+  background-image: url('../assets/wasd-keys.svg');
 }
