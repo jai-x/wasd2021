@@ -1,5 +1,16 @@
 {
+  "language": "en",
+  "twitch": {
+    "enabled": true,
+    "clientID": "",
+    "clientSecret": "",
+    "redirectURI": "http://localhost:9090/nodecg-speedcontrol/twitchauth",
+    "channelName": "",
+    "streamTitle": "🔴 WASD 2021 - Raising money for SpecialEffect: {{game}} - {{category}}",
+    "streamDefaultGame": "Games + Demos"
+  },
   "schedule": {
+    "ignoreGamesWhileImporting": [ "Setup" ],
     "customData": [
       {
         "name": "P1 Pronouns (optional)",
