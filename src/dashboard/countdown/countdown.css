@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./roboto-v20-latin-regular.woff2') format('woff2');
+}
+
+* {
+  font-family: 'Roboto', 'sans-serif';
+}
+
+.countdown-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.countdown-status {
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+.countdown-display {
+  text-align: center;
+  font-size: 44px;
+}
+
+.countdown-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.countdown-button {
+  font-size: 24px;
+  border-radius: 4px;
+}

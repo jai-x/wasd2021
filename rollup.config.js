@@ -35,4 +35,13 @@ const gfxSrcs = nodecg.graphics.map((gfxObj) => {
   return format(input, output, name);
 });
 
-export default gfxSrcs;
+const dashSrcs = nodecg.dashboardPanels.map((dashObj) => {
+  const name = path.dirname(dashObj.file);
+
+  const input = path.join('src', 'dashboard', name, `${name}.js`);
+  const output = path.join('dashboard', name, 'bundle.js');
+
+  return format(input, output, name);
+});
+
+export default [...gfxSrcs,  ...dashSrcs];
