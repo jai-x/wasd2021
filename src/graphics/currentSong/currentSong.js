@@ -5,26 +5,17 @@ import '../common.css';
 import './currentSong.css';
 
 class ScrollText {
-  oninit(vnode) {
-    this.prevText = vnode.attrs.txt
-  }
-
   view(vnode) {
     return m(vnode.attrs.cls, vnode.attrs.txt);
   }
 
-  onupdate(vnode) {
-    if (this.prevText === vnode.attrs.txt) {
-      return;
-    } else {
-      this.prevText = vnode.attrs.txt;
-    }
-
+  onremove(vnode) {
     if (this.scroll) {
       this.scroll.kill();
-      gsap.set(vnode.dom, { clearProps: 'transform' });
     }
+  }
 
+  oncreate(vnode) {
     const parentPadding = 2 * parseInt(window.getComputedStyle(vnode.dom.parentElement).paddingLeft, 10);
     const parentWidth = vnode.dom.parentElement.clientWidth - parentPadding;
 
@@ -35,7 +26,7 @@ class ScrollText {
     }
 
     const distance = textWidth - parentWidth;
-    const speed = 22; // pixels per second
+    const speed = 24; // pixels per second
 
     const tl = gsap.timeline({ repeat: -1 });
 
@@ -61,10 +52,10 @@ export default class CurrentSongComponent {
         (albumArt) ? m('img.current-song-art', { src: albumArt }) : null,
       ]),
       m('.current-song-details', [
-        m('.current-song-name', name),
-        m(ScrollText, { cls: '.current-song-artist', txt: artist }),
-        m('.current-song-details-clip .left'),
-        m('.current-song-details-clip .right'),
+        m('.current-song-name', { key: name }, name),
+        m(ScrollText, { cls: '.current-song-artist', txt: artist, key: artist }),
+        m('.current-song-details-clip .left', { key: 'clip-left' }),
+        m('.current-song-details-clip .right', { key: 'clip-right' }),
       ]),
     ]);
   }
