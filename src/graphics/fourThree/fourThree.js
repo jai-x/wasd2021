@@ -10,9 +10,11 @@ import RunnersComponent from '../runners/runners.js';
 import CouchComponent from '../couch/couch.js';
 import StarfallComponent from '../starfall/starfall.js';
 
-const runRep = NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol');
-const timerRep = NodeCG.Replicant('timer', 'nodecg-speedcontrol');
-const totalRep = NodeCG.Replicant('total', 'nodecg-tiltify');
+const replicants = {
+  run: NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol'),
+  timer: NodeCG.Replicant('timer', 'nodecg-speedcontrol'),
+  total: NodeCG.Replicant('total', 'nodecg-tiltify'),
+};
 
 class RunGameComponent {
   view(vnode) {
@@ -77,18 +79,18 @@ class FourThreeComponent {
   }
 }
 
-NodeCG.waitForReplicants(runRep, timerRep, totalRep).then(() => {
+NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
   m.mount(document.body, {
     view: () => {
       return m(FourThreeComponent, {
-        run: runRep.value,
-        time: timerRep.value.time,
-        total: Math.floor(totalRep.value),
+        run: replicants.run.value,
+        time: replicants.timer.value.time,
+        total: Math.floor(replicants.total.value),
       });
     }
   });
 });
 
-runRep.on('change', () => { m.redraw(); });
-timerRep.on('change', () => { m.redraw(); });
-totalRep.on('change', () => { m.redraw(); });
+Object.values(replicants).forEach((rep) => {
+  rep.on('change', () => { m.redraw(); });
+});

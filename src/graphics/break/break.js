@@ -7,11 +7,14 @@ import './break.css';
 import StarfallComponent from '../starfall/starfall.js';
 import CurrentSongComponent from '../currentSong/currentSong.js';
 
-const runRep = NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol');
-const totalRep = NodeCG.Replicant('total', 'nodecg-tiltify');
-const currentSongRep = NodeCG.Replicant('currentSong', 'nodecg-spotify');
-const countdownRep = NodeCG.Replicant('countdown', 'wasd2021');
-const currentVideoRep = NodeCG.Replicant('currentVideo', 'wasd2021');
+const replicants = {
+  run: NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol'),
+  runArray: NodeCG.Replicant('runDataArray', 'nodecg-speedcontrol'),
+  total: NodeCG.Replicant('total', 'nodecg-tiltify'),
+  currentSong: NodeCG.Replicant('currentSong', 'nodecg-spotify'),
+  countdown: NodeCG.Replicant('countdown', 'wasd2021'),
+  currentVideo: NodeCG.Replicant('currentVideo', 'wasd2021'),
+};
 
 class BreakComponent {
   view(vnode) {
@@ -82,22 +85,19 @@ class VideoPlayer {
   }
 }
 
-NodeCG.waitForReplicants(runRep, totalRep, currentSongRep, countdownRep, currentVideoRep).then(() => {
+NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
   m.mount(document.body, {
     view: () => {
       return m(BreakComponent, {
-        currentSong: currentSongRep.value,
-        total: Math.floor(totalRep.value),
-        countdown: countdownRep.value,
-        currentVideo: currentVideoRep.value,
+        currentSong: replicants.currentSong.value,
+        total: Math.floor(replicants.total.value),
+        countdown: replicants.countdown.value,
+        currentVideo: replicants.currentVideo.value,
       });
     }
   });
 });
 
-
-runRep.on('change', () => { m.redraw(); });
-totalRep.on('change', () => { m.redraw(); });
-currentSongRep.on('change', () => { m.redraw(); });
-countdownRep.on('change', () => { m.redraw(); });
-currentVideoRep.on('change', () => { m.redraw(); });
+Object.values(replicants).forEach((rep) => {
+  rep.on('change', () => { m.redraw(); });
+});

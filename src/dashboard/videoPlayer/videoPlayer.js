@@ -3,8 +3,10 @@ import m from 'mithril';
 import '../common.css';
 import './videoPlayer.css';
 
-const currentVideoRep = NodeCG.Replicant('currentVideo', 'wasd2021');
-const seVideosRep = NodeCG.Replicant('assets:specialEffectVideos', 'wasd2021');
+const replicants = {
+  currentVideo: NodeCG.Replicant('currentVideo', 'wasd2021'),
+  seVideos: NodeCG.Replicant('assets:specialEffectVideos', 'wasd2021'),
+};
 
 class VideoPlayerControl {
   view(vnode) {
@@ -40,16 +42,17 @@ class VideoPlayerControl {
   }
 }
 
-NodeCG.waitForReplicants(currentVideoRep, seVideosRep).then(() => {
+NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
   m.mount(document.body, {
     view: () => {
       return m(VideoPlayerControl, {
-        currentVideo: currentVideoRep.value,
-        seVideos: seVideosRep.value,
+        currentVideo: replicants.currentVideo.value,
+        seVideos: replicants.seVideos.value,
       });
     }
   });
 });
 
-currentVideoRep.on('change', () => { m.redraw(); });
-seVideosRep.on('change', () => { m.redraw(); });
+Object.values(replicants).forEach((rep) => {
+  rep.on('change', () => { m.redraw(); });
+});
