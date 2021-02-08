@@ -29,12 +29,25 @@
       "nodecg-tiltify": "~0.0.0",
       "nodecg-spotify": "~1.5.0"
     },
+    "assetCategories": [
+      {
+        "name": "specialEffectVideos",
+        "title": "SpecialEffect Videos",
+        "allowedTypes": ["mp4", "mkv", "flv", "webm"]
+      }
+    ],
     "dashboardPanels": [
       {
         "file": "countdown/index.html",
         "width": 2,
         "name": "countdown",
         "title": "Countdown"
+      },
+      {
+        "file": "videoPlayer/index.html",
+        "width": 3,
+        "name": "videoPlayer",
+        "title": "Video Player"
       }
     ],
     "graphics": [

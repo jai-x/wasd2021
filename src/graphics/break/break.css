@@ -9,11 +9,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
 .left {
   height: 100%;
-  width: 500px;
+  width: 480px;
   flex-shrink: 0;
 
   display: flex;
@@ -59,6 +60,13 @@
   height: 160px;
 }
 
+.h-space {
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--wasd-pink);
+}
+
 .v-space {
   height: 100%;
   width: 3px;
@@ -69,4 +77,19 @@
 .right {
   height: 100%;
   flex-grow: 1;
+  position: relative;
+}
+
+.video-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid var(--wasd-pink);
+  overflow: hidden;
+}
+
+.video-player {
+  width: 100%;
+  height: 100%;
 }

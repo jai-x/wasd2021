@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/roboto-v20-latin-regular.woff2') format('woff2');
+}
+
+* {
+  font-family: 'Roboto', 'sans-serif';
+}

@@ -1,5 +1,6 @@
 import m from 'mithril';
 
+import '../common.css';
 import './countdown.css';
 
 const countdownRep = NodeCG.Replicant('countdown', 'wasd2021');

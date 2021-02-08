@@ -1,4 +1,4 @@
-.countdown-container {
+.video-control-container {
   width: 100%;
 
   display: flex;
@@ -7,24 +7,23 @@
   gap: 10px;
 }
 
-.countdown-status {
+.video-control-state {
   text-transform: uppercase;
   font-size: 24px;
 }
 
-.countdown-display {
-  text-align: center;
-  font-size: 44px;
+.video-control-select {
+  font-size: 24px;
 }
 
-.countdown-controls {
+.video-control-buttons {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 30px;
 }
 
-.countdown-button {
+.video-control-button {
   font-size: 24px;
   border-radius: 4px;
 }
