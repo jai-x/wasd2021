@@ -1,5 +1,6 @@
 import m from 'mithril';
 import gsap from 'gsap';
+import { get } from 'lodash';
 
 import '../common.css';
 import './break.css';
@@ -36,7 +37,7 @@ class BreakComponent {
         m('.v-space'),
         m('.right', [
           m('.right-schedule', [
-            m(NextRuns, { nextRuns: vnode.attrs.nextRuns, key: vnode.attrs.nextRuns[0].id })
+            m(NextRuns, { nextRuns: vnode.attrs.nextRuns, key: get(vnode, 'attrs.nextRuns[0].id') })
           ]),
           m('.v-space'),
           m('.right-info', [

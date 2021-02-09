@@ -8,6 +8,7 @@ export default class NextRuns {
   view(vnode) {
     return m('.next-runs-container', [
       m('.next-runs-label','SCHEDULE'),
+      (vnode.attrs.nextRuns.length === 0) ? m('.next-runs-label', 'NO RUNS!') : null,
       ...vnode.attrs.nextRuns.map(run => m(NextRun, { run: run })),
     ]);
   }
@@ -21,6 +22,10 @@ export default class NextRuns {
   oncreate(vnode) {
     if (this.anim) {
       this.anim.kill();
+    }
+
+    if (vnode.attrs.nextRuns.length === 0) {
+      return;
     }
 
     const wasdPink = '#FF71E6';
