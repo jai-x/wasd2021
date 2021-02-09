@@ -4,7 +4,17 @@ import gsap from 'gsap';
 import '../common.css';
 import './nextRuns.css';
 
-export default class NextRuns {
+export const nextRuns = (currentRun, allRuns) => {
+  if (!currentRun) {
+    return allRuns;
+  }
+
+  const currentIdx = allRuns.findIndex((run) => (run.id === currentRun.id));
+
+  return allRuns.slice(currentIdx + 1);
+};
+
+export class NextRunsComponent {
   view(vnode) {
     return m('.next-runs-container', [
       m('.next-runs-label','SCHEDULE'),
@@ -61,4 +71,3 @@ class NextRun {
     ]);
   }
 }
-

@@ -8,7 +8,7 @@ import './break.css';
 import StarfallComponent from '../starfall/starfall.js';
 import CurrentSongComponent from '../currentSong/currentSong.js';
 import VideoPlayer from '../videoPlayer/videoPlayer.js';
-import NextRuns from '../nextRuns/nextRuns.js';
+import { nextRuns, NextRunsComponent } from '../nextRuns/nextRuns.js';
 
 const replicants = {
   run: NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol'),
@@ -37,7 +37,7 @@ class BreakComponent {
         m('.v-space'),
         m('.right', [
           m('.right-schedule', [
-            m(NextRuns, { nextRuns: vnode.attrs.nextRuns, key: get(vnode, 'attrs.nextRuns[0].id') })
+            m(NextRunsComponent, { nextRuns: vnode.attrs.nextRuns, key: get(vnode, 'attrs.nextRuns[0].id') })
           ]),
           m('.v-space'),
           m('.right-info', [
@@ -57,15 +57,6 @@ class BreakComponent {
   }
 }
 
-const nextRuns = (currentRun, allRuns) => {
-  if (!currentRun) {
-    return allRuns;
-  }
-
-  const currentIdx = allRuns.findIndex((run) => (run.id === currentRun.id));
-
-  return allRuns.slice(currentIdx + 1);
-};
 
 NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
   m.mount(document.body, {
