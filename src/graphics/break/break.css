@@ -33,7 +33,7 @@
 }
 
 .countdown-label {
-  font-size: 20px;
+  font-size: 30px;
   color: var(--wasd-white-muted);
 }
 
@@ -60,7 +60,7 @@
 }
 
 .h-space {
-  width: 100%;
+  width: 90%;
   height: 3px;
   border-radius: 3px;
   background: var(--wasd-pink);
@@ -110,7 +110,7 @@
 }
 
 .total-amount {
-  font-size: 50px;
+  font-size: 64px;
   color: var(--wasd-white);
 }
 
