@@ -6,6 +6,8 @@ import './break.css';
 
 import StarfallComponent from '../starfall/starfall.js';
 import CurrentSongComponent from '../currentSong/currentSong.js';
+import VideoPlayer from '../videoPlayer/videoPlayer.js';
+import NextRuns from '../nextRuns/nextRuns.js';
 
 const replicants = {
   run: NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol'),
@@ -33,57 +35,34 @@ class BreakComponent {
         ]),
         m('.v-space'),
         m('.right', [
-          m(VideoPlayer, { currentVideo: vnode.attrs.currentVideo })
+          m('.right-schedule', m(NextRuns, { nextRuns: vnode.attrs.nextRuns })),
+          m('.v-space'),
+          m('.right-info', [
+            m('.total-container', [
+              m('.total-label', 'TOTAL RAISED'),
+              m('.total-amount', `£${vnode.attrs.total}`),
+            ]),
+            m('.h-space'),
+            m('.incentives-container', [
+              m('.incentives-label', 'DONATION INCENTIVES'),
+            ]),
+          ]),
+          m(VideoPlayer, { currentVideo: vnode.attrs.currentVideo }),
         ]),
       ]),
     ]);
   }
 }
 
-class VideoPlayer {
-  view(vnode) {
-    return m('.video-container', [
-      m('video.video-player', { src: vnode.attrs.currentVideo.src }),
-    ]);
+const nextRuns = (currentRun, allRuns) => {
+  if (!currentRun) {
+    return allRuns;
   }
 
-  oncreate(vnode) {
-    gsap.set(vnode.dom, { opacity: 0 });
+  const currentIdx = allRuns.findIndex((run) => (run.id === currentRun.id));
 
-    const container = vnode.dom;
-    const video = vnode.dom.children[0];
-
-    const playerPlay = () => {
-      vnode.attrs.currentVideo.state = 'playing';
-      gsap.to(container, { opacity: 1 });
-      video.load();
-      video.play();
-    };
-
-    const playerStop = () => {
-      vnode.attrs.currentVideo.state = 'stopped';
-      video.pause();
-      gsap.to(container, { opacity: 0 });
-    };
-
-    // set state on end
-    video.onended = () => { playerStop() };
-
-    // catch funky state
-    switch (vnode.attrs.currentVideo.state) {
-      case 'playing':
-        playerPlay();
-        break;
-      case 'stopped':
-        playerStop();
-        break;
-    }
-
-    // bind message listeners
-    nodecg.listenFor('currentVideo.start', 'wasd2021', () => { playerPlay() });
-    nodecg.listenFor('currentVideo.stop', 'wasd2021', () => { playerStop() });
-  }
-}
+  return allRuns.slice(currentIdx + 1);
+};
 
 NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
   m.mount(document.body, {
@@ -93,6 +72,7 @@ NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
         total: Math.floor(replicants.total.value),
         countdown: replicants.countdown.value,
         currentVideo: replicants.currentVideo.value,
+        nextRuns: nextRuns(replicants.run.value, replicants.runArray.value),
       });
     }
   });

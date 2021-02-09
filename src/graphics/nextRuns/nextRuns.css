@@ -1,0 +1,51 @@
+.next-runs-container {
+  width: 100%;
+  height: 100%;
+
+  font-family: 'DaggerSquareOblique';
+  letter-spacing: 2px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.next-runs-label {
+  color: var(--wasd-white-muted);
+  font-size: 30px;
+}
+
+.next-run {
+  color: var(--wasd-white);
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+
+  padding: 5px;
+
+  border-radius: 10px;
+  border: 2px solid var(--wasd-pink);
+}
+
+.next-run-game {
+  font-size: 34px;
+}
+
+.next-run-details {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  font-size: 26px;
+}

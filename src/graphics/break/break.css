@@ -78,18 +78,52 @@
   height: 100%;
   flex-grow: 1;
   position: relative;
+
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
-.video-container {
-  position: absolute;
-  width: 100%;
+.right-schedule {
   height: 100%;
-  border-radius: 10px;
-  border: 2px solid var(--wasd-pink);
-  overflow: hidden;
+  width: 700px;
 }
 
-.video-player {
-  width: 100%;
-  height: 100%;
+.right-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  gap: 10px;
+}
+
+.total-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: 'DaggerSquareOblique';
+}
+
+.total-label {
+  font-size: 30px;
+  color: var(--wasd-white-muted);
+}
+
+.total-amount {
+  font-size: 50px;
+  color: var(--wasd-white);
+}
+
+.incentives-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: 'DaggerSquareOblique';
+}
+
+.incentives-label {
+  font-size: 30px;
+  color: var(--wasd-white-muted);
 }
