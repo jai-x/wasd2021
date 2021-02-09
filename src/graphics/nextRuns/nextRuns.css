@@ -9,17 +9,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 20px;
   overflow: hidden;
 }
 
 .next-runs-label {
   color: var(--wasd-white-muted);
   font-size: 30px;
+  margin-bottom: 20px;
 }
 
 .next-run {
   color: var(--wasd-white);
+  margin-bottom: 20px;
 
   width: 100%;
 
@@ -27,7 +28,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 5px;
 
   padding: 5px;
 
@@ -37,6 +37,7 @@
 
 .next-run-game {
   font-size: 34px;
+  margin-bottom: 5px;
 }
 
 .next-run-details {

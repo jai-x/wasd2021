@@ -40,12 +40,12 @@
   justify-content: center;
 
   padding: 10px 0;
-  gap: 5px;
 }
 
 .run-game {
   text-align: center;
   padding: 0 10px;
+  margin-bottom: 5px;
 }
 
 .run-details {
