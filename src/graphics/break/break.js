@@ -35,7 +35,9 @@ class BreakComponent {
         ]),
         m('.v-space'),
         m('.right', [
-          m('.right-schedule', m(NextRuns, { nextRuns: vnode.attrs.nextRuns })),
+          m('.right-schedule', [
+            m(NextRuns, { nextRuns: vnode.attrs.nextRuns, key: vnode.attrs.nextRuns[0].id })
+          ]),
           m('.v-space'),
           m('.right-info', [
             m('.total-container', [

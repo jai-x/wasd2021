@@ -18,7 +18,7 @@ export default class NextRuns {
     }
   }
 
-  onupdate(vnode) {
+  oncreate(vnode) {
     if (this.anim) {
       this.anim.kill();
     }
