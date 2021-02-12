@@ -9,6 +9,8 @@
   border: 5px solid var(--wasd-pink);
   border-top: none;
   border-right: none;
+
+  background-color: var(--chroma-green);
 }
 
 .left {
