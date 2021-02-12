@@ -86,7 +86,7 @@
 
 .right-schedule {
   height: 100%;
-  width: 700px;
+  min-width: 650px;
 }
 
 .right-info {
@@ -119,10 +119,82 @@
   flex-direction: column;
   align-items: center;
 
+  flex-grow: 1;
+  width: 100%;
+
   font-family: 'DaggerSquareOblique';
+  color: var(--wasd-white);
+
+  overflow: hidden;
 }
 
 .incentives-label {
   font-size: 30px;
   color: var(--wasd-white-muted);
+}
+
+.incentives-list {
+  padding-top: 15px;
+  overflow: hidden;
+
+  flex-grow: 1;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /*
+  background-image: linear-gradient(to bottom, black 90%, transparent);
+  */
+  mask-image: linear-gradient(to bottom, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent);
+}
+
+.incentive-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.incentive-game {
+  font-size: 26px;
+}
+
+.incentive-name {
+  font-size: 30px;
+  margin-bottom: 3px;
+}
+
+.incentive-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border: solid 2px var(--wasd-pink);
+  border-radius: 10px;
+  width: 100%;
+
+  position: relative;
+  overflow: hidden;
+  padding: 5px 0;
+}
+
+.incentive-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--wasd-purple);
+  width: 0%;
+}
+
+.incentive-amount {
+  position: relative;
+  font-size: 26px;
 }

@@ -11,6 +11,9 @@
   justify-content: flex-start;
   overflow: hidden;
 
+  /*
+  background-image: linear-gradient(to bottom, black 90%, transparent);
+  */
   mask-image: linear-gradient(to bottom, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent);
 }
