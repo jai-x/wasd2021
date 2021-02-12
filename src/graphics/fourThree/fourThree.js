@@ -1,4 +1,5 @@
 import m from 'mithril';
+import gsap from 'gsap';
 import { get } from 'lodash';
 import fitty from 'fitty';
 
@@ -49,6 +50,35 @@ class RunDetailsComponent {
   }
 }
 
+class Logos {
+  view() {
+    return m('.logos', [
+      m('.logo .wasd'),
+      m('.logo .special-effect'),
+    ]);
+  }
+
+  onremove(vnode) {
+    if (this.anim) {
+      this.anim.kill();
+    }
+  }
+
+  oncreate(vnode) {
+    const logos = Array.from(vnode.dom.children);
+
+    const tl = gsap.timeline({ repeat: -1 });
+
+    logos.forEach((logo) => {
+      tl.from(logo, { opacity: 0 });
+      tl.to({}, vnode.attrs.hold || 2, {});
+      tl.to(logo, { opacity: 0 });
+    });
+
+    this.anim = tl;
+  }
+}
+
 class FourThreeComponent {
   view(vnode) {
     return m('.graphic .overlay', [
@@ -70,10 +100,7 @@ class FourThreeComponent {
           customData: get(vnode, 'attrs.run.customData'),
         }),
         m(CouchComponent, { customData: get(vnode, 'attrs.run.customData') }),
-        m('.logos', [
-          m('.logo .wasd'),
-          m('.logo .special-effect'),
-        ]),
+        m(Logos, { hold: 22 }),
       ]),
     ]);
   }
