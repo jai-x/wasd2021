@@ -13,14 +13,56 @@ const replicants = {
   total: NodeCG.Replicant('total', 'nodecg-tiltify'),
 };
 
+class CTA {
+  view(vnode) {
+    return m('.cta', vnode.attrs.ctas.map(c => m('.cta-text', c)));
+  }
+
+  oncreate(vnode) {
+    const ctas = Array.from(vnode.dom.children);
+
+    const tl = gsap.timeline({ repeat: -1 });
+
+    ctas.forEach((cta) => {
+      tl.from(cta, { opacity: 0 });
+      tl.to({}, vnode.attrs.hold || 2, {});
+      tl.to(cta, { opacity: 0 });
+    });
+
+    this.anim = tl;
+  }
+
+  onremove(vnode) {
+    if (this.anim) {
+      this.anim.kill();
+    }
+  }
+}
+
 class BarComponent {
   view(vnode) {
     return m('.bar', [
-      m('.left', 'Bottom Text'),
+      m('.name', [
+        m('.logo.wasd-icon'),
+        m('span', 'WASD 2021'),
+      ]),
       m('.v-space'),
-      m('.mid', 'Next Up: Furi - jai_'),
+      m('.donos', [
+        m('.logo.special-effect'),
+        m('span', `£${vnode.attrs.total}`),
+      ]),
       m('.v-space'),
-      m('.right', moment().format('HH:mm')),
+      m(CTA, {
+        hold: 30,
+        ctas: [
+        'This is Warwick\'s Awesome Speedruns & Demos 2021',
+        'See the full schedule at wasd.warwick.gg/schedule',
+        'WASD 2021 is raising money for SpecialEffect',
+        'Donate now at wasd.warwick.gg/donate',
+        ]
+      }),
+      m('.v-space'),
+      m('span', moment().format('HH:mm')),
     ]);
   }
 }
