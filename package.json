@@ -33,7 +33,7 @@
       {
         "name": "specialEffectVideos",
         "title": "SpecialEffect Videos",
-        "allowedTypes": ["mp4", "mkv", "flv", "webm"]
+        "allowedTypes": ["mp4", "mkv", "flv", "webm", "mov"]
       }
     ],
     "dashboardPanels": [
