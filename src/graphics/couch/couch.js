@@ -13,8 +13,9 @@ class CouchRow {
     }
 
     return m('.couch-row', [
+      m('.couch-mic'),
       m('.couch-person', name),
-      (pronouns) ? m('.couch-pronouns', pronouns) : null,
+      m('.couch-pronouns', pronouns),
     ]);
   }
 }
@@ -31,7 +32,7 @@ export default class CouchComponent {
     }
 
     return m('.couch-container', [
-      m('.couch-label', 'COUCH'),
+      m('.couch-label', 'COMMENTATORS'),
       ...couch.map((c) => m(CouchRow, c)),
     ]);
   }

@@ -21,18 +21,6 @@ export default class RunnersComponent {
   }
 }
 
-class RunnerPronouns {
-  view(vnode) {
-    const { pronouns } = vnode.attrs;
-
-    if (!pronouns) {
-      return null;
-    }
-
-    return m('.runner-pronouns', pronouns);
-  }
-}
-
 class RunnerRowName {
   view(vnode) {
     const { name, pronouns } = vnode.attrs;
@@ -40,14 +28,14 @@ class RunnerRowName {
     return m('.runner-row .name', [
       m('.runner-icon .runner'),
       m('.runner-label', name),
-      m(RunnerPronouns, { pronouns: pronouns }),
+      m('.runner-pronouns', pronouns || null),
     ]);
   }
 }
 
 class RunnerRowTwitch {
   view(vnode) {
-    const { twitch, pronouns } = vnode.attrs;
+    const { twitch } = vnode.attrs;
 
     if (!twitch) {
       return null;
@@ -56,7 +44,7 @@ class RunnerRowTwitch {
     return m('.runner-row .twitch', [
       m('.runner-icon .twitch'),
       m('.runner-label', twitch),
-      //m(RunnerPronouns, { pronouns: pronouns }),
+      m('.runner-pronouns'),
     ]);
   }
 }
@@ -71,7 +59,7 @@ class RunnerComponent {
 
     return m('.runner-container', [
       m(RunnerRowName, { name: name, pronouns: pronouns }),
-      m(RunnerRowTwitch, { twitch: twitch, pronouns: pronouns }),
+      m(RunnerRowTwitch, { twitch: twitch }),
     ]);
   }
 
