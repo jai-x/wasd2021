@@ -42,6 +42,9 @@ class CountdownControl {
 }
 
 NodeCG.waitForReplicants(countdownRep).then(() => {
+  // ensure good state
+  countdownRep.value = { state: 'paused', display: '10:00' };
+
   m.mount(document.body, {
     view: () => m(CountdownControl, { countdown: countdownRep.value })
   });

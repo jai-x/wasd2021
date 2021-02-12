@@ -3,7 +3,6 @@ const EventEmitter = require('events');
 const moment = require('moment');
 
 module.exports = (nodecg) => {
-
   class CountdownTimer extends EventEmitter {
     constructor() {
       super();

@@ -43,6 +43,9 @@ class VideoPlayerControl {
 }
 
 NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
+  // ensure good state
+  replicants.currentVideo.value = { src: '', state: 'stopped' };
+
   m.mount(document.body, {
     view: () => {
       return m(VideoPlayerControl, {
