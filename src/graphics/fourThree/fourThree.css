@@ -27,6 +27,7 @@
   min-height: 330px;
   border-bottom: 5px solid var(--wasd-pink);
   border-top: 5px solid var(--wasd-pink);
+  background-color: var(--chroma-green);
 }
 
 .run-info {

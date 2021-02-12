@@ -29,6 +29,7 @@
   width: 100%;
   min-height: 360px;
   border-bottom: 5px solid var(--wasd-pink);
+  background-color: var(--chroma-green);
 }
 
 .logos {
