@@ -1,14 +1,4 @@
 @font-face {
-  font-family: 'MontserratBold';
-  src: url('./assets/montserrat-bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'UbuntuMono';
-  src: url('./assets/ubuntumono-regular.ttf') format('truetype');
-}
-
-@font-face {
   font-family: 'DaggerSquareOblique';
   src: url('./assets/daggersquare-oblique.otf') format('opentype');
 }
