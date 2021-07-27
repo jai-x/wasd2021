@@ -6,14 +6,14 @@ RUN apt update && \
 
 # install nodecg
 WORKDIR /nodecg
-RUN git clone --depth 1 --branch v1.7.4 https://github.com/nodecg/nodecg.git .
+RUN git clone --depth 1 --branch v1.8.1 https://github.com/nodecg/nodecg.git .
 RUN npm ci
 
 # install bundles
 
 # nodecg-speedcontrol
 WORKDIR /nodecg/bundles
-RUN git clone --depth 1 --branch v2.2.0 https://github.com/speedcontrol/nodecg-speedcontrol.git
+RUN git clone --depth 1 --branch v2.3.0 https://github.com/speedcontrol/nodecg-speedcontrol.git
 WORKDIR /nodecg/bundles/nodecg-speedcontrol
 RUN npm ci
 
@@ -23,10 +23,10 @@ RUN git clone --depth 1 https://github.com/daniellockard/nodecg-tiltify.git
 WORKDIR /nodecg/bundles/nodecg-tiltify
 RUN npm ci
 
-# nodecg-spotify
+# ncg-spotify
 WORKDIR /nodecg/bundles
-RUN git clone --depth 1 https://github.com/jai-x/nodecg-spotify.git
-WORKDIR /nodecg/bundles/nodecg-spotify
+RUN git clone --depth 1 https://github.com/EwanLyon/ncg-spotify.git
+WORKDIR /nodecg/bundles/ncg-spotify
 RUN npm ci
 
 # wasd2021

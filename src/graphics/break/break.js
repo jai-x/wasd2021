@@ -13,7 +13,7 @@ import { nextRuns, NextRunsComponent } from '../nextRuns/nextRuns.js';
 const replicants = {
   run: NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol'),
   runArray: NodeCG.Replicant('runDataArray', 'nodecg-speedcontrol'),
-  currentSong: NodeCG.Replicant('currentSong', 'nodecg-spotify'),
+  currentSong: NodeCG.Replicant('currentSong', 'ncg-spotify'),
   countdown: NodeCG.Replicant('countdown', 'wasd2021'),
   currentVideo: NodeCG.Replicant('currentVideo', 'wasd2021'),
   total: NodeCG.Replicant('total', 'nodecg-tiltify'),

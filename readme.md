@@ -12,7 +12,7 @@ the videogame speedrunning marathon event [Warwick's Awesome Speedruns & Demos
   for run detail management, run timing and Twitch detail integration
 * [`nodecg-tiltify`](https://github.com/daniellockard/nodecg-tiltify) for
   pulling donation and reward information for a campaign from Tiltify.com
-* [`nodecg-spotify`](https://github.com/jai-x/nodecg-spotify) for displaying the
+* [`ncg-spotify`](https://github.com/EwanLyon/ncg-spotify) for displaying the
   currently playing song used as background music being played via Spotify
 
 ### dependant JS packages
@@ -45,7 +45,7 @@ the videogame speedrunning marathon event [Warwick's Awesome Speedruns & Demos
 
 ```shell
 # install nodecg
-$ git clone --depth 1 --branch v1.7.4 git@github.com:nodecg/nodecg.git
+$ git clone --depth 1 --branch v1.8.1 git@github.com:nodecg/nodecg.git
 $ cd nodecg
 $ npm ci
 
@@ -53,7 +53,7 @@ $ npm ci
 $ cd bundles
 
 # nodecg-speedcontrol
-$ git clone --depth 1 --branch v2.2.0 git@github.com:speedcontrol/nodecg-speedcontrol.git
+$ git clone --depth 1 --branch v2.3.0 git@github.com:speedcontrol/nodecg-speedcontrol.git
 $ cd nodecg-speedcontrol
 $ npm ci
 $ cd ..
@@ -64,9 +64,9 @@ $ cd nodecg-tiltify
 $ npm ci
 $ cd ..
 
-# nodecg-spotify
-$ git clone --depth 1 git@github.com:jai-x/nodecg-spotify.git
-$ cd nodecg-spotify
+# ncg-spotify
+$ git clone --depth 1 git@github.com:EwanLyon/ncg-spotify.git
+$ cd ncg-spotify
 $ npm ci
 $ cd ..
 
@@ -74,8 +74,12 @@ $ cd ..
 $ git clone --depth 1 git@github.com:jai-x/wasd2021.git
 $ cd wasd2021
 $ npm ci
+```
 
-# build
+### build
+
+```shell
+$ cd wasd2021/bundles/wasd2021
 $ npm run build
 ```
 

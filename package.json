@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/jai-x/wasd2021#readme",
   "nodecg": {
-    "compatibleRange": "~1.7.4",
+    "compatibleRange": "~1.8.0",
     "bundleDependencies": {
-      "nodecg-speedcontrol": "~2.2.0",
+      "nodecg-speedcontrol": "~2.3.0",
       "nodecg-tiltify": "~0.0.0",
-      "nodecg-spotify": "~1.5.0"
+      "ncg-spotify": "~1.6.0"
     },
     "assetCategories": [
       {
