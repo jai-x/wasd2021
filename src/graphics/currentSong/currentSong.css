@@ -62,9 +62,11 @@
 .current-song-name {
   color: var(--wasd-black);
   font-size: 26px;
+  /*
   text-overflow: ellipsis;
   max-width: 100%;
   overflow: hidden;
+  */
 }
 
 .current-song-artist {
